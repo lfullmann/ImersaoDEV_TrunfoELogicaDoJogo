@@ -25,7 +25,6 @@ var cartas = [jogador1, jogador2, jogador3];
 function sortearCarta() {
   var numeroCartaMaquina = parseInt(Math.random() * 3);
   cartaMaquina = cartas[numeroCartaMaquina];
-  console.log(cartaMaquina);
 
   var numeroCartaJogador = parseInt(Math.random() * 3);
   while (numeroCartaJogador == numeroCartaMaquina) {
@@ -33,4 +32,7 @@ function sortearCarta() {
   }
   numeroCartaJogador = cartas[numeroCartaJogador];
   console.log(numeroCartaJogador);
+
+  document.getElementById("btnSortear").disabled = true;
+  document.getElementById("btnJogar").disabled = false;
 }
