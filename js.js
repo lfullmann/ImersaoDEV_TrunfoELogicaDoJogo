@@ -45,7 +45,22 @@ function sortearCarta() {
 
 function exibirOpcoes() {
   var opcoes = document.getElementById("opcoes");
+  var opcoesTexto = "";
   for (var atributo in cartaJogador.atributos) {
-    console.log(atributo);
+    opcoesTexto +=
+      "<input type = 'radio' name='atributo' value'" +
+      atributo +
+      "'>" +
+      atributo;
+  }
+  opcoes.innerHTML = opcoesTexto;
+}
+
+function obtemAtributoSelecionado() {
+  radiosAtributo = document.getElementsByTagName("atributo");
+  for (var i = 0; i < radiosAtributo; i++) {
+    if (radioAtributo[i].checked) {
+      return radiosAtributo[i].value;
+    }
   }
 }
