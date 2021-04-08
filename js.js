@@ -19,4 +19,18 @@ var jogador3 = {
   magia: 90,
 };
 
-var cartas = [cartaJogador1, cartaJogador2, cartaJogador3];
+var cartaMaquina;
+var cartaJogador;
+var cartas = [jogador1, jogador2, jogador3];
+function sortearCarta() {
+  var numeroCartaMaquina = parseInt(Math.random() * 3);
+  cartaMaquina = cartas[numeroCartaMaquina];
+  console.log(cartaMaquina);
+
+  var numeroCartaJogador = parseInt(Math.random() * 3);
+  while (numeroCartaJogador == numeroCartaMaquina) {
+    numeroCartaJogador = parseInt(Math.random() * 3);
+  }
+  numeroCartaJogador = cartas[numeroCartaJogador];
+  console.log(numeroCartaJogador);
+}
