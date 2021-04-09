@@ -64,3 +64,20 @@ function obtemAtributoSelecionado() {
     }
   }
 }
+
+function jogar() {
+  var atributoSelecionado = obtemAtributoSelecionado();
+  if (
+    cartaJogador.atributos[atributoSelecionado] >
+    cartaMaquina.atributoSelecionado[atributoSelecionado]
+  ) {
+    alert("A máquina venceu!");
+  } else if (
+    cartaJogador.atributo[atributoSelecionado] <
+    cartaMaquina.atributo[atributoSelecionado]
+  ) {
+    alert("A carta da máquina venceu");
+  } else {
+    alert("Empate");
+  }
+}
