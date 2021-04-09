@@ -58,27 +58,29 @@ function exibirOpcoes() {
 }
 
 function obtemAtributoSelecionado() {
-  radiosAtributo = document.getElementsByTagName("atributo");
-  for (var i = 0; i < radiosAtributo; i++) {
+  var radioAtributo = document.getElementsByName("atributo");
+  for (var i = 0; i < radioAtributo.length; i++) {
     if (radioAtributo[i].checked) {
-      return radiosAtributo[i].value;
+      return radioAtributo[i].value;
     }
   }
 }
 
 function jogar() {
   var atributoSelecionado = obtemAtributoSelecionado();
+
   if (
     cartaJogador.atributos[atributoSelecionado] >
-    cartaMaquina.atributoSelecionado[atributoSelecionado]
+    cartaMaquina.atributos[atributoSelecionado]
   ) {
     alert("A máquina venceu!");
   } else if (
-    cartaJogador.atributo[atributoSelecionado] <
-    cartaMaquina.atributo[atributoSelecionado]
+    cartaJogador.atributos[atributoSelecionado] <
+    cartaMaquina.atributos[atributoSelecionado]
   ) {
     alert("A carta da máquina venceu");
   } else {
     alert("Empate");
   }
+  console.log(cartaMaquina);
 }
