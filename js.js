@@ -36,11 +36,12 @@ function sortearCarta() {
   while (numeroCartaJogador == numeroCartaMaquina) {
     numeroCartaJogador = parseInt(Math.random() * 3);
   }
-  numeroCartaJogador = cartas[numeroCartaJogador];
-  console.log(numeroCartaJogador);
+  cartaJogador = cartas[numeroCartaJogador];
+  console.log(cartaJogador);
 
   document.getElementById("btnSortear").disabled = true;
   document.getElementById("btnJogar").disabled = false;
+  exibirOpcoes();
 }
 
 function exibirOpcoes() {
@@ -48,7 +49,7 @@ function exibirOpcoes() {
   var opcoesTexto = "";
   for (var atributo in cartaJogador.atributos) {
     opcoesTexto +=
-      "<input type = 'radio' name='atributo' value'" +
+      "<input type='radio' name='atributo' value='" +
       atributo +
       "'>" +
       atributo;
